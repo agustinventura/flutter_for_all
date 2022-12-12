@@ -30,11 +30,33 @@ class HomePage extends StatelessWidget {
         title: const Text('Hello World Page'),
       ),
       drawer: const Drawer(
-        child: Text('Hello World Menu Option'),
+        child: HelloWorldDrawer(),
       ),
       body: const HelloWorldContent(),
     );
   }
+}
+
+class HelloWorldDrawer extends StatelessWidget {
+  const HelloWorldDrawer({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: const [
+        DrawerHeader(child: Text('Hello World Drawer Header')),
+        ListTile(
+          leading: Icon(
+            Icons.home,
+          ),
+          title: Text('Hello World Page')
+        ),
+      ],
+    );
+  }
+
 }
 
 class HelloWorldContent extends StatelessWidget {
