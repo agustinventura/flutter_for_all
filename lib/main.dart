@@ -29,6 +29,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Hello World Page'),
       ),
+      drawer: const Drawer(
+        child: Text('Hello World Menu Option'),
+      ),
       body: const HelloWorldContent(),
     );
   }
