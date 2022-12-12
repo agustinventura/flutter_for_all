@@ -25,10 +25,24 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Hello World', textDirection: TextDirection.ltr,)
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Hello World Page'),
       ),
+      body: const HelloWorldContent(),
+    );
+  }
+}
+
+class HelloWorldContent extends StatelessWidget {
+  const HelloWorldContent({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Hello World', textDirection: TextDirection.ltr,)
     );
   }
 }
