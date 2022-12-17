@@ -11,9 +11,10 @@ class HelloWorldApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Hello World App',
-      home: HomePage()
+      theme: ThemeData.dark(),
+      home: const HomePage()
     );
   }
 }
