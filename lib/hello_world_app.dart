@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_for_all/ui/hello_world_page.dart';
-import 'package:flutter_for_all/ui/settings_page.dart';
+import 'package:flutter_for_all/routes.dart';
 
 class HelloWorldApp extends StatelessWidget {
   const HelloWorldApp({
@@ -13,10 +12,7 @@ class HelloWorldApp extends StatelessWidget {
         title: 'Hello World App',
         theme: ThemeData.dark(),
         initialRoute: '/',
-        routes: {
-          '/': (context) => const HomePage(),
-          '/settings': (context) => const SettingsPage(),
-        },
+        onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
