@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_for_all/ui/hello_world_page.dart';
-import 'package:flutter_for_all/ui/settings_page.dart';
 
 class HelloWorldDrawer extends StatelessWidget {
   const HelloWorldDrawer({
@@ -18,9 +16,7 @@ class HelloWorldDrawer extends StatelessWidget {
             ),
             title: const Text('Hello World Page'),
           onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomePage()));
+              Navigator.pushNamed(context, '/');
           }
         ),
         ListTile(
@@ -29,7 +25,7 @@ class HelloWorldDrawer extends StatelessWidget {
             ),
             title: const Text('Settings'),
           onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsPage()));
+              Navigator.pushNamed(context, '/settings', arguments: Theme.of(context));
           },
         ),
       ],

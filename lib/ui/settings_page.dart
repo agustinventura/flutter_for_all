@@ -8,6 +8,8 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = ModalRoute.of(context)!.settings.arguments as ThemeData;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings Page'),
@@ -15,14 +17,16 @@ class SettingsPage extends StatelessWidget {
       drawer: const Drawer(
         child: HelloWorldDrawer(),
       ),
-      body: const SettingsContent(),
+      body: SettingsContent(theme: theme,),
     );
   }
 }
 
 class SettingsContent extends StatelessWidget {
+  final ThemeData theme;
+
   const SettingsContent({
-    Key? key,
+    Key? key, required this.theme,
   }) : super(key: key);
 
   @override
@@ -32,7 +36,7 @@ class SettingsContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
               const Text('Settings', textDirection: TextDirection.ltr),
-              ElevatedButton(onPressed: () {Navigator.pop(context);}, child: const Text('Back'))
+              Text('Current theme is ${theme.brightness == Brightness.dark ? 'dark' : 'light'}')
           ],
         )
     );
