@@ -27,8 +27,14 @@ class SettingsContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Text('Settings', textDirection: TextDirection.ltr)
+    return Center(
+        child: Column (
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+              const Text('Settings', textDirection: TextDirection.ltr),
+              ElevatedButton(onPressed: () {Navigator.pop(context);}, child: const Text('Back'))
+          ],
+        )
     );
   }
 }
