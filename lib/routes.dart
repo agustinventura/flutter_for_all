@@ -14,7 +14,7 @@ final router = GoRouter(
         GoRoute(
             name: 'settings',
             path: 'settings',
-            builder: (context, state) => SettingsPage(theme: state.extra as ThemeData)
+            builder: (context, state) => SettingsPage(state.extra as ThemeData)
         )
       ]
     )

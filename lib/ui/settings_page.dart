@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_for_all/ui/menu/drawer.dart';
 
 class SettingsPage extends StatelessWidget {
-  final ThemeData theme;
+  final ThemeData _theme;
 
-  const SettingsPage({
-    Key? key, required this.theme,
+  const SettingsPage(this._theme, {
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -18,17 +18,29 @@ class SettingsPage extends StatelessWidget {
       drawer: const Drawer(
         child: HelloWorldDrawer(),
       ),
-      body: SettingsContent(theme: theme,),
+      body: SettingsContent(_theme),
     );
   }
 }
 
-class SettingsContent extends StatelessWidget {
-  final ThemeData theme;
+class SettingsContent extends StatefulWidget {
+  final ThemeData _theme;
 
-  const SettingsContent({
-    Key? key, required this.theme,
+  const SettingsContent(this._theme, {
+    Key? key,
   }) : super(key: key);
+
+  @override
+  State<SettingsContent> createState() => _SettingsContentState(_theme);
+
+
+}
+
+class _SettingsContentState extends State<SettingsContent> {
+  
+  ThemeData _theme;
+  
+  _SettingsContentState(this._theme);
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +48,21 @@ class SettingsContent extends StatelessWidget {
         child: Column (
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-              const Text('Settings', textDirection: TextDirection.ltr),
-              Text('Current theme is ${theme.brightness == Brightness.dark ? 'dark' : 'light'}')
+            const Text('Settings', textDirection: TextDirection.ltr),
+            Text('Current theme is ${_theme.brightness == Brightness.dark ? 'dark' : 'light'}'),
+            ElevatedButton(onPressed: _toggleTheme, child: const Text('Change theme'))
           ],
         )
     );
+  }
+
+  void _toggleTheme() {
+    setState(() {
+      if (_theme.brightness == Brightness.dark) {
+        _theme = ThemeData.light();
+      } else {
+        _theme = ThemeData.dark();
+      }
+    });
   }
 }
