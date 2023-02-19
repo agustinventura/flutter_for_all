@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_for_all/ui/settings/settings_view_model.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_for_all/routes.dart';
 
-class HelloWorldApp extends StatelessWidget {
+class HelloWorldApp extends ConsumerWidget {
   const HelloWorldApp({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(settingsViewModelProvider);
+
     return MaterialApp.router(
         title: 'Hello World App',
-        theme: ThemeData.dark(),
+        theme: theme,
         routerConfig: router,
     );
   }

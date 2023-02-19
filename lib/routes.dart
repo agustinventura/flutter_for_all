@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_for_all/ui/error_page.dart';
 import 'package:flutter_for_all/ui/home_page.dart';
-import 'package:flutter_for_all/ui/settings_page.dart';
+import 'package:flutter_for_all/ui/settings/settings_page.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
@@ -14,7 +13,7 @@ final router = GoRouter(
         GoRoute(
             name: 'settings',
             path: 'settings',
-            builder: (context, state) => SettingsPage(state.extra as ThemeData)
+            builder: (context, state) => const SettingsPage()
         )
       ]
     )

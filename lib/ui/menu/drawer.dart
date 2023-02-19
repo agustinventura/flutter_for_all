@@ -26,7 +26,7 @@ class HelloWorldDrawer extends StatelessWidget {
             ),
             title: const Text('Settings'),
           onTap: () {
-              context.goNamed('settings', extra: Theme.of(context));
+              context.goNamed('settings');
           },
         ),
       ],
