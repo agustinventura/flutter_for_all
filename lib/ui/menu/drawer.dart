@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HelloWorldDrawer extends StatelessWidget {
   const HelloWorldDrawer({
@@ -16,7 +17,7 @@ class HelloWorldDrawer extends StatelessWidget {
             ),
             title: const Text('Hello World Page'),
           onTap: () {
-              Navigator.pushNamed(context, '/');
+              context.goNamed('home');
           }
         ),
         ListTile(
@@ -25,7 +26,7 @@ class HelloWorldDrawer extends StatelessWidget {
             ),
             title: const Text('Settings'),
           onTap: () {
-              Navigator.pushNamed(context, '/settings', arguments: Theme.of(context));
+              context.goNamed('settings', extra: Theme.of(context));
           },
         ),
       ],

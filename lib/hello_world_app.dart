@@ -8,11 +8,10 @@ class HelloWorldApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
         title: 'Hello World App',
         theme: ThemeData.dark(),
-        initialRoute: '/',
-        onGenerateRoute: RouteGenerator.generateRoute,
+        routerConfig: router,
     );
   }
 }
