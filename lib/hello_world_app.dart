@@ -10,11 +10,11 @@ class HelloWorldApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = ref.watch(settingsViewModelProvider);
+    final settings = ref.watch(settingsViewModelProvider);
 
     return MaterialApp.router(
         title: 'Hello World App',
-        theme: theme,
+        theme: settings.theme,
         routerConfig: router,
     );
   }

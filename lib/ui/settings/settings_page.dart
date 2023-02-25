@@ -33,14 +33,14 @@ class SettingsContent extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = ref.watch(settingsViewModelProvider);
+    final settings = ref.watch(settingsViewModelProvider);
 
     return Center(
         child: Column (
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('Settings', textDirection: TextDirection.ltr),
-            Text('Current theme is ${theme.brightness == Brightness.dark ? 'dark' : 'light'}'),
+            Text('Current theme is ${settings.theme.brightness == Brightness.dark ? 'dark' : 'light'}'),
             ElevatedButton(onPressed: () => ref.read(settingsViewModelProvider.notifier).toggleTheme(), child: const Text('Change theme'))
           ],
         )
