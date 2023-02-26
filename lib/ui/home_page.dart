@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_for_all/ui/menu/drawer.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -10,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hello World Page'),
+        title: Text(AppLocalizations.of(context).homePageTitle),
       ),
       drawer: const Drawer(
         child: HelloWorldDrawer(),
@@ -27,11 +28,9 @@ class HelloWorldContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-          children: [
-            const Text('Hello World', textDirection: TextDirection.ltr,),
-            DatePickerDialog(initialDate: DateTime.now(), firstDate: DateTime.now(), lastDate: DateTime.now())
-          ],
-        );
+    return Center(
+      child:
+        Text(AppLocalizations.of(context).homePageTitle)
+    );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_for_all/ui/menu/drawer.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'settings_view_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPage extends StatelessWidget {
 
@@ -15,7 +16,7 @@ class SettingsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings Page'),
+        title: Text(AppLocalizations.of(context).settingPageTitle),
       ),
       drawer: const Drawer(
         child: HelloWorldDrawer(),
@@ -39,9 +40,8 @@ class SettingsContent extends ConsumerWidget {
         child: Column (
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Settings', textDirection: TextDirection.ltr),
-            Text('Current theme is ${settings.theme.brightness == Brightness.dark ? 'dark' : 'light'}'),
-            ElevatedButton(onPressed: () => ref.read(settingsViewModelProvider.notifier).toggleTheme(), child: const Text('Change theme'))
+            Text(AppLocalizations.of(context).settingsActiveTheme(settings.theme.brightness == Brightness.dark ? AppLocalizations.of(context).settingsDarkTheme: AppLocalizations.of(context).settingsLightTheme)),
+            ElevatedButton(onPressed: () => ref.read(settingsViewModelProvider.notifier).toggleTheme(), child: Text(AppLocalizations.of(context).settingsChangeThemeButton))
           ],
         )
     );

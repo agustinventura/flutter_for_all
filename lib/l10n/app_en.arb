@@ -1,0 +1,19 @@
+{
+    "appName": "Flutter for All Demo App",
+    "drawerTitle": "Flutter for All Drawer",
+    "homePageTitle": "Hello World Page",
+    "homePageText": "Hello World",
+    "settingPageTitle": "Settings Page",
+    "settingsActiveTheme": "Active theme is {activeTheme}",
+    "@settingsActiveTheme": {
+      "placeholders": {
+        "activeTheme": {
+          "type": "String",
+          "example": "dark"
+        }
+      }
+    },
+    "settingsChangeThemeButton": "Change theme",
+    "settingsDarkTheme": "dark",
+    "settingsLightTheme": "light"
+}

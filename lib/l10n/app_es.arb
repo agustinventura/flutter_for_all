@@ -1,0 +1,11 @@
+{
+    "appName": "App Demo de Flutter for All",
+    "drawerTitle": "Menú Flutter for All",
+    "homePageTitle": "Página Hola Mundo",
+    "homePageText": "Hola Mundo",
+    "settingPageTitle": "Página de Ajustes",
+    "settingsActiveTheme": "El tema activo es {activeTheme}",
+    "settingsChangeThemeButton": "Cambiar tema",
+    "settingsDarkTheme": "oscuro",
+    "settingsLightTheme": "claro"
+}
