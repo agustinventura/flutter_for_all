@@ -27,8 +27,11 @@ class HelloWorldContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Text('Hello World', textDirection: TextDirection.ltr,)
-    );
+    return Column(
+          children: [
+            const Text('Hello World', textDirection: TextDirection.ltr,),
+            DatePickerDialog(initialDate: DateTime.now(), firstDate: DateTime.now(), lastDate: DateTime.now())
+          ],
+        );
   }
 }
